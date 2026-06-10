@@ -30,3 +30,23 @@
   justify-content: space-between;
   background-color: var(--foreground);
 }
+
+.gallerie {
+  padding: 110px 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 83px;
+}
+
+.gallerie > :nth-child(3n + 1) {
+  justify-self: start;
+}
+
+.gallerie > :nth-child(3n + 2) {
+  justify-self: center;
+}
+
+.gallerie > :nth-child(3n + 3) {
+  justify-self: end;
+}

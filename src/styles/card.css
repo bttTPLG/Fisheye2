@@ -1,0 +1,46 @@
+.name-and-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.profile-img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name-and-img-container h2 {
+  font-size: 36px;
+  font-weight: 400;
+  color: #d3573c;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 3px;
+}
+
+.localisation {
+  font-size: 13px;
+  font-weight: 400;
+  color: #901c1c;
+}
+
+.citation {
+  font-size: 10px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.prix {
+  font-size: 9px;
+  font-weight: 400;
+  color: #757575;
+}
