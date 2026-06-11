@@ -1,8 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import "@/styles/photCard.css";
 import { FaHeart } from "react-icons/fa";
+import LightboxModal from "../LightboxModal/LightboxModal";
+import { useState } from "react";
 
 export default function PhotoCard({ title, image, video, likes }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => {
+    if (!isOpen) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <article>
       {image ? (
@@ -12,6 +25,7 @@ export default function PhotoCard({ title, image, video, likes }) {
           height={300}
           alt={title}
           className="pictur"
+          onClick={openModal}
         />
       ) : (
         <video className="pictur">
@@ -27,6 +41,9 @@ export default function PhotoCard({ title, image, video, likes }) {
           <FaHeart className="heart-icon" />
         </div>
       </div>
+      {isOpen ? (
+        <LightboxModal title={title} image={image} close={openModal} />
+      ) : null}
     </article>
   );
 }
