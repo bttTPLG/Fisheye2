@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
-export default function LightboxModal({ title, image, close }) {
+export default function LightboxModal({ title, image, video, close }) {
   return (
     <section className="lightbox-modal">
       <div className="lightbox">
@@ -13,13 +13,19 @@ export default function LightboxModal({ title, image, close }) {
           </button>
         </div>
         <div className="photo-and-title">
-          <Image
-            src={`/assets/${image}`}
-            width={350}
-            height={300}
-            alt={`Photo ${title}`}
-            className="picture"
-          />
+          {image ? (
+            <Image
+              src={`/assets/${image}`}
+              width={350}
+              height={300}
+              alt={`Photo ${title}`}
+              className="picture"
+            />
+          ) : (
+            <video className="picture">
+              <source src={`/assets/${video}`} type="video/mp4" />
+            </video>
+          )}
           <p>{title}</p>
         </div>
         <div className="btn-container">

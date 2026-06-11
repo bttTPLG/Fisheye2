@@ -28,7 +28,7 @@ export default function PhotoCard({ title, image, video, likes }) {
           onClick={openModal}
         />
       ) : (
-        <video className="pictur">
+        <video className="pictur" onClick={openModal}>
           <source src={`/assets/${video}`} type="video/mp4" />
         </video>
       )}
@@ -42,7 +42,12 @@ export default function PhotoCard({ title, image, video, likes }) {
         </div>
       </div>
       {isOpen ? (
-        <LightboxModal title={title} image={image} close={openModal} />
+        <LightboxModal
+          title={title}
+          image={image}
+          video={video}
+          close={openModal}
+        />
       ) : null}
     </article>
   );
