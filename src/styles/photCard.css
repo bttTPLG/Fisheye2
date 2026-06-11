@@ -11,6 +11,7 @@ article {
   object-fit: cover;
   display: block;
   border-radius: 5px;
+  object-position: top;
 }
 
 .title-and-like {

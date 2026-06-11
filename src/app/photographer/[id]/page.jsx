@@ -23,6 +23,7 @@ export default async function Page({ params }) {
                 key={media.id}
                 title={media.title}
                 image={media.image}
+                video={media.video}
                 likes={media.likes}
               />
             ))}
