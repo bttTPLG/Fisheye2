@@ -10,7 +10,7 @@ export default function PhotoCard({ title, image, video, likes }) {
           src={`/assets/${image}`}
           width={350}
           height={300}
-          alt={`Photo ${title}`}
+          alt={title}
           className="pictur"
         />
       ) : (
@@ -18,8 +18,10 @@ export default function PhotoCard({ title, image, video, likes }) {
           <source src={`/assets/${video}`} type="video/mp4" />
         </video>
       )}
+
       <div className="title-and-like">
         <p>{title}</p>
+
         <div className="like">
           <p className="counter">{likes}</p>
           <FaHeart className="heart-icon" />
