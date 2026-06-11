@@ -6,11 +6,15 @@ import Header from "@/components/Header/Header";
 import PhotographerHeader from "@/components/PhotographeHeader/PhotographeHeader";
 import "@/styles/photographerPage.css";
 import PhotoCard from "@/components/PhotoCard/PhotoCard";
+import { FaHeart } from "react-icons/fa";
 
 export default async function Page({ params }) {
   const { id } = await params;
   const photographer = await getPhotographer(id);
   const medias = await getAllMediasForPhotographer(id);
+
+  const totalLikes = medias.reduce((count, media) => count + media.likes, 0);
+
   return (
     <div className="page">
       <Header />
@@ -29,6 +33,13 @@ export default async function Page({ params }) {
             ))}
           </div>
         </section>
+        <div className="cta">
+          <div className="like">
+            <p className="counter">{totalLikes}</p>
+            <FaHeart className="heart-icon" />
+          </div>
+          <p className="price">{photographer.price}€/jour</p>
+        </div>
       </main>
     </div>
   );
