@@ -7,7 +7,7 @@ export default async function Card({ id }) {
   const photographer = await getPhotographer(id);
   return (
     <article className="profile-card">
-      <Link href="/photographer" className="name-and-img-container">
+      <Link href={`/photographer/${id}`} className="name-and-img-container">
         <Image
           src={`/assets/${photographer.portrait}`}
           width={200}
